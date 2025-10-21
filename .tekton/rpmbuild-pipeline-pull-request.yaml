@@ -1,0 +1,16 @@
+---
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: InternalRequest
+metadata:
+  name: environment-on-pull-request-internal-request
+spec:
+  pipeline:
+    pipelineRef:
+      resolver: git
+      params:
+        - name: url
+          value: https://github.com/konflux-ci/rpmbuild-pipeline
+        - name: revision
+          value: main
+        - name: pathInRepo
+          value: .tekton/libecpg-pull-request.yaml
